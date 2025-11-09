@@ -1,0 +1,17 @@
+//scripted pipline code for creating files and folder
+
+node{
+    stage ("1.first stage create folder"){
+        echo "executing scripted pipline code for folder and file"
+        sh "mkdir -p scripted-folder"
+        echo "creatye a file inside the folder"
+        sh "touch scripted-folder/script_file.txt"
+    }
+    stage ("2.qadd data to the file"){
+        echo "update subcontent to the file"
+        writefile file: "scripted-folder/script_file.txt",text:"we are writting scripted pipleine code"   
+         echo "update subcontent to the file" >>test.txt
+         sh "ls"
+         sh "ls-alrts"
+        }
+}
